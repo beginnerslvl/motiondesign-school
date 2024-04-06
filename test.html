@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variable Visualizations</title>
+    <!-- Include Raphael.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+</head>
+<body>
+  <section class="docs-section" id="functions-modules">
+    <h2 class="section-heading">Functions and Modules</h2>
+    <p>
+        Functions are blocks of reusable code that perform specific tasks. They help organize code, improve readability, and reduce redundancy. Modules are files containing collections of functions, variables, and classes that can be imported and used in other Python programs.
+    </p>
+
+    <h3>Defining Functions</h3>
+    <p>
+        Functions are defined using the <code>def</code> keyword followed by the function name, parentheses for parameters, and a colon. The code block within the function is indented.
+    </p>
+    <h5>Code Example:</h5>
+    <pre>
+def greet(name):
+  """Greets a person by name."""
+  print("Hello,", name + "!")
+
+greet("Alice")  # Output: Hello, Alice!
+    </pre>
+
+    <h3>Function Parameters and Return Values</h3>
+    <p>
+        Functions can accept parameters as input and return values using the <code>return</code> statement.
+    </p>
+    <h5>Code Example:</h5>
+    <pre>
+def add_numbers(x, y):
+  """Adds two numbers and returns the sum."""
+  sum = x + y
+  return sum
+
+result = add_numbers(5, 3)  # result will be 8
+    </pre>
+
+    <h3>Modules and Importing</h3>
+    <p>
+        Modules are files containing Python code that can be imported and used in other programs. The <code>import</code> statement is used to import modules.
+    </p>
+    <h5>Code Example:</h5>
+    <pre>
+# math_utils.py (module file)
+def square(x):
+  return x * x
+
+# main.py (your program)
+import math_utils
+
+result = math_utils.square(4)  # result will be 16
+    </pre>
+
+    <h3>Built-in Modules</h3>
+    <p>
+        Python comes with numerous built-in modules providing various functionalities. Some commonly used modules include:
+        <ul>
+            <li><code>math</code>: Mathematical functions</li>
+            <li><code>random</code>: Generating random numbers</li>
+            <li><code>os</code>: Operating system interactions</li>
+            <li><code>datetime</code>: Date and time manipulation</li>
+        </ul>
+    </p>
+
+    <div id="canvas"></div>
+    <script>
+      // Visualization of functions, lambda, and map using Raphael.js
+      var paper = Raphael("canvas", 800, 400);
+      
+      // Define a circle to represent a function
+      var circle = paper.circle(100, 100, 50);
+      circle.attr({
+        fill: "red",
+        stroke: "black"
+      });
+      
+      // Label the circle as "Function"
+      var functionLabel = paper.text(100, 150, "Function");
+      functionLabel.attr({
+        "font-size": "16px"
+      });
+      
+      // Define a rectangle to represent a lambda function
+      var rectangle = paper.rect(200, 100, 100, 50);
+      rectangle.attr({
+        fill: "blue",
+        stroke: "black"
+      });
+      
+      // Label the rectangle as "Lambda"
+      var lambdaLabel = paper.text(250, 150, "Lambda");
+      lambdaLabel.attr({
+        "font-size": "16px"
+      });
+      
+      // Define a line to represent the map function
+      var line = paper.path("M300 100 L400 100");
+      line.attr({
+        stroke: "green",
+        "stroke-width": "2"
+      });
+      
+      // Label the line as "Map"
+      var mapLabel = paper.text(350, 120, "Map");
+      mapLabel.attr({
+        "font-size": "16px"
+      });
+      
+      // Define a circle to represent the input to the function
+      var inputCircle = paper.circle(50, 200, 25);
+      inputCircle.attr({
+        fill: "yellow",
+        stroke: "black"
+      });
+      
+      // Label the input circle as "Input"
+      var inputLabel = paper.text(50, 230, "Input");
+      inputLabel.attr({
+        "font-size": "16px"
+      });
+      
+      // Define a circle to represent the output of the function
+      var outputCircle = paper.circle(150, 200, 25);
+      outputCircle.attr({
+        fill: "green",
+        stroke: "black"
+      });
+      
+      // Label the output circle as "Output"
+      var outputLabel = paper.text(150, 230, "Output");
+      outputLabel.attr({
+        "font-size": "16px"
+      });
+    </script>
+
+</section>
+    
+</body>
+</html>
